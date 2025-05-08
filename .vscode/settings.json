@@ -1,0 +1,12 @@
+{
+    "python.pythonPath": "venv\\Scripts\\python.exe",  // Ruta al intérprete de tu entorno virtual (Linux/macOS)
+    // En Windows usa: "venv\\Scripts\\python.exe"
+
+    "python.analysis.extraPaths": [
+        "./djangocrud",  // Ruta a tu proyecto Django (carpeta con settings.py)
+        "./tasks"        // Ruta a tu app (tasks)
+    ],
+
+    "python.linting.pylintEnabled": false,  // Desactiva Pylint si usas Pylance
+    "python.languageServer": "Pylance"      // Usa Pylance para mejor análisis
+}
