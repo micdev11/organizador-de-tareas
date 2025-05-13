@@ -2,13 +2,28 @@
 
 {% block content %}
 
-<h1>CReate task</h1>
+<main>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center display-3 py-5">Crear tarea</h1>
 
-{{error}}
-<form action="/create_task/" method="POST">
-  {% csrf_token %}
-  {{form}}
+      <form action="{% url 'create_task' %}" method="POST" class="card card-body">
+        {% csrf_token %}
+        {{ error }}
 
-  <button class="btn btn-primary">Guardar</button>
-</form>
+        <div class="mb-3">
+          <label for="title">Título</label>
+          <input type="text" name="title" id="title" class="form-control" required placeholder="Escribe el título de la tarea"/>
+        </div>
+
+        <div class="mb-3">
+          <label for="description">Descripción</label>
+          <textarea name="description" id="description" class="form-control" required placeholder="Escribe la descripción de la tarea"></textarea>
+        </div>
+
+        <button class="btn btn-primary">Crear tarea</button>
+      </form>
+    </div>
+  </div>
+</main>
 {% endblock %}
