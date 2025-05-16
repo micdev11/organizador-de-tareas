@@ -20,11 +20,11 @@
           {% if user.is_authenticated %}
           <li class="nav-item">
             <a href="{% url 'tasks_completed' %}" class="nav-link"
-              >complted tasks</a
+              >Tareas completadas</a
             >
           </li>
           <li class="nav-item">
-            <a href="{% url 'tasks' %}" class="nav-link">Tareas</a>
+            <a href="{% url 'tasks' %}" class="nav-link">Tareas pendientes</a>
           </li>
           <li class="nav-item">
             <a href="{% url 'create_task' %}" class="nav-link">Crear tarea</a>
