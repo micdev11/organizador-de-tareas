@@ -2,16 +2,17 @@
 
 {% block content %}
 
-<main>
+<main class="container">
   <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <h1 class="text-center display-3 py-5">Crear tarea</h1>
+    <div class="col-md-4 offset-md-4 mt-3">
 
-      <form action="{% url 'create_task' %}" method="POST" class="card card-body">
-        {% csrf_token %}
+      <form action="/tasks/create/" method="POST" class="card card-body">
+        <h1>Crear tarea</h1>
+        
         {{ error }}
+        {% csrf_token %}
 
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label for="title">Título</label>
           <input type="text" name="title" id="title" class="form-control" required placeholder="Escribe el título de la tarea"/>
         </div>
@@ -19,9 +20,12 @@
         <div class="mb-3">
           <label for="description">Descripción</label>
           <textarea name="description" id="description" class="form-control" required placeholder="Escribe la descripción de la tarea"></textarea>
-        </div>
+        </div> -->
 
-        <button class="btn btn-primary">Crear tarea</button>
+        {{form}}
+        <button class="btn btn-primary">
+          Crear tarea
+        </button>
       </form>
     </div>
   </div>
